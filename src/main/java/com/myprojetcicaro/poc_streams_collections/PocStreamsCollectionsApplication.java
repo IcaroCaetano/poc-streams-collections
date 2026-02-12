@@ -1,5 +1,6 @@
 package com.myprojetcicaro.poc_streams_collections;
 
+import com.myprojetcicaro.poc_streams_collections.list.ListExamples;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PocStreamsCollectionsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PocStreamsCollectionsApplication.class, args);
-	}
 
+		System.out.println("******Lists******");
+		ListExamples.run();
+	}
 }
