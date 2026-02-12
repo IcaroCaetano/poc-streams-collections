@@ -64,4 +64,15 @@ public class ListExamples {
 
         System.out.println("Total: " + total);
     }
+
+    public static void run() {
+
+        List<Product> products = createProductList();
+
+        filterAvailableProducts(products);
+        filterByCategory(products, "Electronics");
+        getProductNames(products);
+        sortByPrice(products);
+        calculateTotalPrice(products);
+    }
 }
