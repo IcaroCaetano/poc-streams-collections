@@ -60,6 +60,17 @@ public class ListExamples {
 
         BigDecimal total = products.stream()
                 .map(Product::getPrice)
+                /**
+                 * .reduce
+                 * Combinar todos os elementos de uma Stream em um único resultado.
+                 *
+                 * T reduce(T identity, BinaryOperator<T> accumulator)
+                 *                  ||
+                 *                  V
+                 * .reduce(BigDecimal.ZERO, BigDecimal::add);
+                 *
+                 * onde: (a, b) -> a.add(b)
+                 */
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         System.out.println("Total: " + total);
