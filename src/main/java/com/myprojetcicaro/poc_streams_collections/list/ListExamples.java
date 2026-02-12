@@ -22,7 +22,7 @@ public class ListExamples {
 
     public static void filterAvailableProducts(List<Product> products) {
         System.out.println();
-        System.out.println("--- Available Products - Filter by Is Available ---");
+        System.out.println("\n--- Available Products - Filter by Is Available ---");
 
         products.stream()
                 .filter(Product::isAvailable)
@@ -30,7 +30,7 @@ public class ListExamples {
     }
 
     public static void filterByCategory(List<Product> products, String category) {
-        System.out.println("--- Products by Category: " + category + " ---");
+        System.out.println("\n--- Products by Category: " + category + " ---");
 
         products.stream()
                 .filter(p -> p.getCategory().equalsIgnoreCase(category))
@@ -38,7 +38,7 @@ public class ListExamples {
     }
 
     public static void getProductNames(List<Product> products) {
-        System.out.println("--- Product Names ---");
+        System.out.println("\n--- Product Names ---");
 
         List<String> names = products.stream()
                 .map(Product::getName)
