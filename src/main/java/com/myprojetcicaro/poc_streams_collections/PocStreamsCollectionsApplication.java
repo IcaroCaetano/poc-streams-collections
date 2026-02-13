@@ -1,6 +1,7 @@
 package com.myprojetcicaro.poc_streams_collections;
 
 import com.myprojetcicaro.poc_streams_collections.list.ListExamples;
+import com.myprojetcicaro.poc_streams_collections.map.MapExamples;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,5 +15,6 @@ public class PocStreamsCollectionsApplication {
 
 		System.out.println();
 		System.out.println("******Maps******");
+		MapExamples.run();
 	}
 }

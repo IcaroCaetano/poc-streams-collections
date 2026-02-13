@@ -71,6 +71,10 @@ public class MapExamples {
                                  * O resultado será:
                                  *    ADMIN = 2,
                                  *    USER = 3
+                                 *
+                                 *    Senao usar o Collectors.counting() a saida seria:
+                                 *    ADMIN -> [User1, User3]
+                                 *     USER  -> [User2, User4]
                                  */
                                 User::getRole, Collectors.counting()
                         )
@@ -81,7 +85,9 @@ public class MapExamples {
         /**
          * Saida:
          *
-         *
+         *--- MAP - Grouped by Role ---
+         * ADMIN -> 2
+         * USER -> 2
          */
     }
 
