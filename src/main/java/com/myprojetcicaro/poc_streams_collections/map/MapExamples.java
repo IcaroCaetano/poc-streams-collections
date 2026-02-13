@@ -32,8 +32,7 @@ public class MapExamples {
     private static void printAll(Map<Long, User> users) {
         System.out.println("\n--- All Users ---");
 
-        users.forEach((id, user) ->
-                System.out.println("Key: " + id + " | Value: " + user));
+        users.forEach((id, user) -> System.out.println("Key: " + id + " | Value: " + user));
     }
 
     private static void filterByRole(Map<Long, User> users, String role) {
@@ -55,16 +54,35 @@ public class MapExamples {
     }
 
     private static void groupByRole(Map<Long, User> users) {
-        System.out.println("\n--- Grouped by Role ---");
+        System.out.println("\n--- MAP - Grouped by Role ---");
 
         Map<String, Long> grouped = users.values().stream()
-                .collect(Collectors.groupingBy(
-                        User::getRole,
-                        Collectors.counting()
-                ));
+                .collect(
+                        Collectors.groupingBy(
+                                /**
+                                 * Collectors.counting()
+                                 * Para cada grupo criado, conte quantos elementos existem.
+                                 * Ex:  ADMIN
+                                 *      USER
+                                 *      ADMIN
+                                 *      USER
+                                 *      USER
+                                 *
+                                 * O resultado será:
+                                 *    ADMIN = 2,
+                                 *    USER = 3
+                                 */
+                                User::getRole, Collectors.counting()
+                        )
+                );
 
-        grouped.forEach((role, count) ->
-                System.out.println(role + " -> " + count));
+        grouped.forEach((role, count) -> System.out.println(role + " -> " + count));
+
+        /**
+         * Saida:
+         *
+         *
+         */
     }
 
     private static void increaseSalary(Map<Long, User> users) {
