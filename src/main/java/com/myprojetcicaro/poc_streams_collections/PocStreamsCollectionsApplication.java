@@ -11,5 +11,8 @@ public class PocStreamsCollectionsApplication {
 
 		System.out.println("******Lists******");
 		ListExamples.run();
+
+		System.out.println();
+		System.out.println("******Maps******");
 	}
 }
