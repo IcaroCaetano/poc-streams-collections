@@ -94,6 +94,40 @@ public class MapExamples {
     private static void increaseSalary(Map<Long, User> users) {
         System.out.println("\n--- Salary Increased by 10% ---");
 
+        /**
+         * entrySet:
+         *
+         * Devolve um conjunto (Set) contendo todas as entradas (chave + valor) do Map.
+         *
+         * Se o Map for:
+         * {
+         *   1 -> UserA
+         *   2 -> UserB
+         * }
+         *
+         * entao:
+         * users.entrySet()
+         *
+         * Retorna algo equivalente a:
+         * [
+         *   Entry(1, UserA),
+         *   Entry(2, UserB)
+         * ]
+         *
+         * users.keySet()
+         *
+         * Retorna apenas:
+         *
+         * Set<Long>
+         * Só as chaves.
+         *
+         * users.values()
+         *
+         * Retorna apenas:
+         *
+         * Collection<User>
+         * Só os valores.
+         */
         Map<Long, User> updated = users.entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
@@ -106,9 +140,19 @@ public class MapExamples {
                                     user.getSalary() * 1.10
                             );
                         }
+                        // Retorna um novo map com os salarios de cada usuario multiplicado por 1.10
                 ));
 
         updated.forEach((id, user) ->
                 System.out.println("Key: " + id + " | Value: " + user));
+
+        /**
+         * Saida:
+         *
+         * Key: 1 | Value: User{id=1, name='Icaro', role='ADMIN', salary=11000.0}
+         * Key: 2 | Value: User{id=2, name='Mary', role='USER', salary=5500.0}
+         * Key: 3 | Value: User{id=3, name='John', role='ADMIN', salary=13200.000000000002}
+         * Key: 4 | Value: User{id=4, name='Anna', role='USER', salary=4950.0}
+         */
     }
 }
