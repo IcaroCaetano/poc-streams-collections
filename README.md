@@ -57,3 +57,17 @@ Internally:
 - Insertion at the end is fast.
 
 - Removal at the beginning is fast.
+
+## 📌 4️⃣ Why use it this way?
+
+Because it follows the principle:
+
+- Program to the interface, not to the implementation.
+
+If tomorrow you want to change it:
+
+````
+Queue<String> queue = new ArrayDeque<>();
+````
+
+Nothing else changes in the code.
