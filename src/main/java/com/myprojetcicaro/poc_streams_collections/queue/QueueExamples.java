@@ -23,9 +23,18 @@ public class QueueExamples {
         queue.offer("Task 2");
         queue.offer("Task 3");
 
+        /**
+         * peek - Retorna o primeiro elemento da fila
+         * Não remove o elemento (Nao altera  fila)
+         */
         System.out.println("Peek (head): " + queue.peek());
 
         while (!queue.isEmpty()) {
+
+            /**
+             * poll Retorna o primeiro elemento
+             * Remove ele da fila
+             */
             System.out.println("Processing: " + queue.poll());
         }
     }
