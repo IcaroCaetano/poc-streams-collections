@@ -93,3 +93,21 @@ Because queues work like this:
 
 Input → [A, B, C] → Output
 First in → First out.
+
+## 📌 6️⃣ Internally (structural view) LinkedList uses:
+
+````
+Node {
+element
+next
+previous
+}
+````
+
+Then:
+
+- Insertion O(1)
+
+- Removal O(1) at the beginning
+
+- Access by index is O(n)
