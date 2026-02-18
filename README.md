@@ -71,3 +71,25 @@ Queue<String> queue = new ArrayDeque<>();
 ````
 
 Nothing else changes in the code.
+
+## 📌 5️⃣ FIFO Behavior
+
+Example:
+
+````
+queue.offer("A");
+
+queue.offer("B");
+
+queue.offer("C");
+
+System.out.println(queue.poll());
+````
+
+Output:
+A
+
+Because queues work like this:
+
+Input → [A, B, C] → Output
+First in → First out.
