@@ -111,3 +111,18 @@ Then:
 - Removal O(1) at the beginning
 
 - Access by index is O(n)
+
+## 7️⃣ Important Comparison
+Today, in modern practice, it is more recommended to use:
+
+`Queue<String> queue = new ArrayDeque<>();`
+
+Because:
+
+- Better performance
+
+- Lower memory overhead
+
+- Not synchronized
+
+- More efficient than LinkedList in most cases
