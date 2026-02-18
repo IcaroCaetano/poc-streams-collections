@@ -12,13 +12,13 @@ public class QueueExamples {
         priorityQueueExample();
     }
 
-    // 🔹 Exemplo clássico FIFO (First In First Out)
     private static void fifoExample() {
 
         System.out.println("\n--- FIFO Queue (LinkedList) ---");
 
         Queue<String> queue = new LinkedList<>();
 
+        // Usando FIFO
         queue.offer("Task 1");
         queue.offer("Task 2");
         queue.offer("Task 3");
@@ -30,7 +30,7 @@ public class QueueExamples {
         }
     }
 
-    // 🔹 Exemplo com prioridade
+    // Exemplo com prioridade
     private static void priorityQueueExample() {
 
         System.out.println("\n--- PriorityQueue Example ---");
