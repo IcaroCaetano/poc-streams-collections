@@ -126,3 +126,12 @@ Because:
 - Not synchronized
 
 - More efficient than LinkedList in most cases
+
+
+## 🧠 Final Summary
+
+`Queue<String> queue = new LinkedList<>();`
+
+This means:
+
+I am creating a FIFO queue of Strings using a linked list as the implementation.
