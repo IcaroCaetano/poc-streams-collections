@@ -43,3 +43,17 @@ In other words, it can function as:
 - Stack
 
 Here you are using it as a Queue.
+
+## 📌 3️⃣ What does this line do in practice?
+
+It creates:
+
+- A FIFO queue based on a doubly linked list.
+
+Internally:
+
+- Each element points to the next.
+
+- Insertion at the end is fast.
+
+- Removal at the beginning is fast.
