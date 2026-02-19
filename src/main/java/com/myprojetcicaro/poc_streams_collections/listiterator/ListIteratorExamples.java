@@ -38,8 +38,7 @@ public class ListIteratorExamples {
 
         List<String> technologies = createList();
 
-        ListIterator<String> iterator =
-                technologies.listIterator(technologies.size());
+        ListIterator<String> iterator = technologies.listIterator(technologies.size());
 
         while (iterator.hasPrevious()) {
             System.out.println(iterator.previous());
