@@ -1,6 +1,8 @@
 package com.myprojetcicaro.poc_streams_collections;
 
+import com.myprojetcicaro.poc_streams_collections.hashmap.HashMapExamples;
 import com.myprojetcicaro.poc_streams_collections.list.ListExamples;
+import com.myprojetcicaro.poc_streams_collections.listiterator.ListIteratorExamples;
 import com.myprojetcicaro.poc_streams_collections.map.MapExamples;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,5 +18,12 @@ public class PocStreamsCollectionsApplication {
 		System.out.println();
 		System.out.println("******Maps******");
 		MapExamples.run();
+
+		System.out.println("\n******HashMap******");
+		HashMapExamples.run();
+
+		System.out.println("******ListIterator******");
+		ListIteratorExamples.run();
+
 	}
 }

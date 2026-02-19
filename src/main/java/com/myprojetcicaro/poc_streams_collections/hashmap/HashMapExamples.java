@@ -76,7 +76,6 @@ public class HashMapExamples {
         stock.put("Mouse", 50);
         stock.put("Keyboard", 30);
 
-        // entrySet (melhor prática)
         for (Map.Entry<String, Integer> entry : stock.entrySet()) {
             System.out.println("Key: " + entry.getKey() +
                                " | Value: " + entry.getValue());
