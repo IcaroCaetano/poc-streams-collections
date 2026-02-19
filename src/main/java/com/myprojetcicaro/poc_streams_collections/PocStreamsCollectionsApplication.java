@@ -5,7 +5,6 @@ import com.myprojetcicaro.poc_streams_collections.hashset.HashSetExamples;
 import com.myprojetcicaro.poc_streams_collections.list.ListExamples;
 import com.myprojetcicaro.poc_streams_collections.listiterator.ListIteratorExamples;
 import com.myprojetcicaro.poc_streams_collections.map.MapExamples;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
