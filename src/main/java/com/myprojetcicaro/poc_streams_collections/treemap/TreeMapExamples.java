@@ -47,9 +47,13 @@ public class TreeMapExamples {
         // Possui varios tipos de metodos de navegacao
         System.out.println("First Key: " + map.firstKey());
         System.out.println("Last Key: " + map.lastKey());
+        // Retorna a menor chave estritamente maior que a chave fornecida, ou nulo se não houver tal chave.
         System.out.println("Higher than 20: " + map.higherKey(20));
+        //Retorna a maior chave estritamente menor que a chave fornecida, ou nulo se não houver tal chave.
         System.out.println("Lower than 30: " + map.lowerKey(30));
+        // Retorna a menor chave maior ou igual à chave fornecida, ou nulo se não houver tal chave.
         System.out.println("Ceiling 25: " + map.ceilingKey(25));
+        //Retorna a maior chave menor ou igual à chave, ou nulo se não houver tal chave.
         System.out.println("Floor 25: " + map.floorKey(25));
     }
 
@@ -61,16 +65,31 @@ public class TreeMapExamples {
             map.put(i, "Number " + i);
         }
 
+        /**
+         * Um mapa que fornece uma ordenação total em suas chaves. O mapa é ordenado de acordo
+         * com a ordem natural de suas chaves ou por um comparador, geralmente fornecido no momento
+         * da criação do mapa ordenado. Essa ordem é refletida ao iterar sobre as visualizações de
+         * coleção do mapa ordenado (retornadas pelos métodos entrySet, keySet e values). Diversas
+         * operações adicionais são fornecidas para aproveitar a ordenação. (Esta interface é o
+         * análogo de SortedSet para mapas.)
+         */
         SortedMap<Integer, String> sub = map.subMap(3, 7);
-        sub.forEach((k, v) ->
-                System.out.println(k + " -> " + v));
+        sub.forEach((k, v) -> System.out.println(k + " -> " + v));
     }
 
     private static void reverseOrderExample() {
         System.out.println("\n=== Ordem Reversa ===");
 
-        TreeMap<Integer, String> reverseMap =
-                new TreeMap<>(Comparator.reverseOrder());
+        /**
+         * Uma função de comparação que impõe uma ordenação total a uma coleção
+         * de objetos. Os comparadores podem ser passados ​​para um método
+         * de ordenação (como `Collections.sort` ou `Arrays.sort`) para permitir um
+         * controle preciso sobre a ordem de classificação. Os comparadores também
+         * podem ser usados ​​para controlar a ordem de certas estruturas de
+         * dados (como conjuntos ordenados ou mapas ordenados) ou para fornecer uma
+         * ordenação para coleções de objetos que não possuem uma ordenação natural.
+         */
+        TreeMap<Integer, String> reverseMap = new TreeMap<>(Comparator.reverseOrder());
 
         reverseMap.put(1, "One");
         reverseMap.put(2, "Two");
@@ -84,6 +103,7 @@ public class TreeMapExamples {
         System.out.println("\n=== Ranking com Objetos ===");
 
         TreeMap<Player, Integer> ranking = new TreeMap<>(
+                // Returns a comparator that imposes the reverse ordering of this comparator.
                 Comparator.comparingInt(Player::getScore).reversed()
                           .thenComparing(Player::getName)
         );
