@@ -31,6 +31,9 @@ public class HashtableExamples {
 
         System.out.println("\n--- Null Restriction Example ---");
 
+        /**
+         * Hashtable nao permite valores nulos nem chaves nulas. Enquanto Hashmappermite ambos
+         */
         Hashtable<String, String> table = new Hashtable<>();
 
         table.put("Key1", "Value1");
