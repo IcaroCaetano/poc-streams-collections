@@ -11,6 +11,7 @@ import java.util.TreeMap;
  * - Não permite chave null
  * - Permite range queries (Grande diferencial)
  * - Consome mais memória que HashMap
+ * - Métodos de navegação avançados
  */
 public class TreeMapExamples {
 
@@ -23,7 +24,7 @@ public class TreeMapExamples {
     }
 
     private static void basicOrderingExample() {
-        System.out.println("\n=== Ordenação Natural ===");
+        System.out.println("== Ordenação Natural ===");
 
         TreeMap<Integer, String> map = new TreeMap<>();
         map.put(3, "Carlos");
@@ -43,6 +44,7 @@ public class TreeMapExamples {
         map.put(30, "C");
         map.put(40, "D");
 
+        // Possui varios tipos de metodos de navegacao
         System.out.println("First Key: " + map.firstKey());
         System.out.println("Last Key: " + map.lastKey());
         System.out.println("Higher than 20: " + map.higherKey(20));

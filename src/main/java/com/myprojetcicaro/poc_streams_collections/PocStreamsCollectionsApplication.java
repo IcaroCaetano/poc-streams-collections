@@ -6,6 +6,7 @@ import com.myprojetcicaro.poc_streams_collections.hashtable.HashtableExamples;
 import com.myprojetcicaro.poc_streams_collections.list.ListExamples;
 import com.myprojetcicaro.poc_streams_collections.listiterator.ListIteratorExamples;
 import com.myprojetcicaro.poc_streams_collections.map.MapExamples;
+import com.myprojetcicaro.poc_streams_collections.treemap.TreeMapExamples;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -31,5 +32,8 @@ public class PocStreamsCollectionsApplication {
 
 		System.out.println("******HashTable******");
 		HashtableExamples.run();
+
+		System.out.println("******TreeMap******");
+		TreeMapExamples.run();
 	}
 }
