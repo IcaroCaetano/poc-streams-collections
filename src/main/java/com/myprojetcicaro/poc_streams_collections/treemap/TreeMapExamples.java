@@ -5,6 +5,13 @@ import java.util.Comparator;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
+/**
+ * - Red-Black Tree (árvore binária balanceada)
+ * - Mantém ordenação natural (Comparable)
+ * - Não permite chave null
+ * - Permite range queries (Grande diferencial)
+ * - Consome mais memória que HashMap
+ */
 public class TreeMapExamples {
 
     public static void run() {
