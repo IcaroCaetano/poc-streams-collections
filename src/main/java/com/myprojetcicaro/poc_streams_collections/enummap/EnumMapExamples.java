@@ -4,7 +4,14 @@ import java.util.EnumMap;
 import java.util.Map;
 
 /**
- *
+ * <ul>
+ *  <li>Extremamente rápido</li>
+ *  <li>Muito eficiente em memória</li>
+ *  <li>Mais rápido que HashMap quando a chave é enum</li>
+ *  <li>Só aceita enum como chave</li>
+ *  <li>Não permite chave null</li>
+ *  <li>Permite value null</li>
+ * </ul>
  */
 public class EnumMapExamples {
 
@@ -32,8 +39,7 @@ public class EnumMapExamples {
         map.put(OrderStatus.NEW, "Pedido criado");
         map.put(OrderStatus.SHIPPED, "Pedido enviado");
 
-        map.forEach((k, v) ->
-                System.out.println(k + " -> " + v));
+        map.forEach((k, v) -> System.out.println(k + " -> " + v));
     }
 
     private static void nullValueExample() {
