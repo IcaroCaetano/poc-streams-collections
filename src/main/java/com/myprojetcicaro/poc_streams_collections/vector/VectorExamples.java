@@ -38,15 +38,22 @@ public class VectorExamples {
         System.out.println("Size: " + vector.size());
     }
 
-    // Enumeration (API antiga)
+    // Enumeration
     private static void enumerationExample() {
-        System.out.println("\n=== Enumeration (Legado) ===");
+        System.out.println("\n=== Enumeration ===");
 
         Vector<String> vector = new Vector<>();
         vector.add("A");
         vector.add("B");
         vector.add("C");
 
+        /**
+         * elements - Retorna uma enumeração dos componentes deste vetor. O objeto Enumeration
+         * retornado gerará todos os itens deste vetor. O primeiro item gerado é o
+         * item no índice 0, seguido pelo item no índice 1 e assim por diante. Se o
+         * vetor for estruturalmente modificado durante a enumeração dos elementos,
+         * os resultados da enumeração serão indefinidos.
+         */
         Enumeration<String> enumeration = vector.elements();
 
         while (enumeration.hasMoreElements()) {
