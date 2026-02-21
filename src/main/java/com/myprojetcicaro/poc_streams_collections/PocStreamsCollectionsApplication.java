@@ -55,5 +55,6 @@ public class PocStreamsCollectionsApplication {
 		System.out.println("******Vector******");
 		VectorExamples.run();
 
+
 	}
 }
