@@ -130,6 +130,16 @@ public class LinkedListExamples {
 
         while (iterator.hasPrevious()) {
             System.out.println("Previous: " + iterator.previous());
+
+            /**
+             * == ListIterator ===
+             * Next: A
+             * Next: B
+             * Next: C
+             * Previous: C
+             * Previous: B
+             * Previous: A
+             */
         }
     }
 }
