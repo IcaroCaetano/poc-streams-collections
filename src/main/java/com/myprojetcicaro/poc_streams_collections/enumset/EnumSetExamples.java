@@ -46,8 +46,7 @@ public class EnumSetExamples {
     private static void rangeExample() {
         System.out.println("\n=== EnumSet.range ===");
 
-        EnumSet<Permission> range =
-                EnumSet.range(Permission.READ, Permission.DELETE);
+        EnumSet<Permission> range = EnumSet.range(Permission.READ, Permission.DELETE);
 
         range.forEach(System.out::println);
     }
@@ -65,8 +64,7 @@ public class EnumSetExamples {
     private static void removeExample() {
         System.out.println("\n=== Remove ===");
 
-        EnumSet<Permission> permissions =
-                EnumSet.allOf(Permission.class);
+        EnumSet<Permission> permissions = EnumSet.allOf(Permission.class);
 
         permissions.remove(Permission.DELETE);
 
