@@ -4,6 +4,11 @@ import java.util.Vector;
 import java.util.Enumeration;
 import java.util.Iterator;
 
+/**
+ * Vector é uma implementação de List baseada em array dinâmico, assim como ArrayList.
+ *
+ * A diferença: Todos os métodos do Vector são sincronizados (thread-safe)
+ */
 public class VectorExamples {
 
     public static void run() {
