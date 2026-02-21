@@ -42,7 +42,7 @@ public class CollectionExamples {
 
     // Operações em massa
     private static void bulkOperations() {
-        System.out.println("\n=== Bulk Operations ===");
+        System.out.println("\n=== Bulk Operations (Volume)===");
 
         Collection<String> col1 = new ArrayList<>();
         col1.add("A");
@@ -63,6 +63,12 @@ public class CollectionExamples {
 
         col1.retainAll(col2);
         System.out.println("After retainAll: " + col1);
+
+        /**
+         * After addAll: [A, B, B, C]
+         * After removeAll: [A]
+         * After retainAll: [B, C]
+         */
     }
 
     // Iteração
@@ -99,9 +105,16 @@ public class CollectionExamples {
     private static void polymorphismExample() {
         System.out.println("=== Polimorfismo ===");
 
-        printCollection(new ArrayList<>(), "Test");
-        printCollection(new HashSet<>(), "Test");
-        printCollection(new LinkedList<>(), "Test");
+        printCollection(new ArrayList<>(), "TestArray");
+        printCollection(new HashSet<>(), "TestHasSet");
+        printCollection(new LinkedList<>(), "TestLinkedList");
+
+        /**
+         * === Polimorfismo ===
+         * [TestArray]
+         * [TestHasSet]
+         * [TestLinkedList]
+         */
     }
 
     private static <T> void printCollection(Collection<T> collection, T element) {
