@@ -1,7 +1,6 @@
 package com.myprojetcicaro.poc_streams_collections.enummap;
 
 import java.util.EnumMap;
-import java.util.Map;
 
 /**
  * <ul>
