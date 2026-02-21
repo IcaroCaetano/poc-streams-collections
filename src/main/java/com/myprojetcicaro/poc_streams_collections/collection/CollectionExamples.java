@@ -16,6 +16,17 @@ public class CollectionExamples {
     private static void basicOperations() {
         System.out.println("\n== Operações Básicas ===");
 
+        /**
+         * A interface raiz na hierarquia de coleções. Uma coleção representa um
+         * grupo de objetos, conhecidos como seus elementos. Algumas coleções permitem
+         * elementos duplicados e outras não. Algumas são ordenadas e outras não ordenadas.
+         * O JDK não fornece nenhuma implementação direta desta interface: ele fornece
+         * implementações de subinterfaces mais específicas, como Set e List. Esta interface
+         * é normalmente usada para passar coleções e manipulá-las quando se deseja a máxima
+         * generalidade.
+         * Bags ou multisets (coleções não ordenadas que podem conter elementos duplicados)
+         * devem implementar esta interface diretamente.
+         */
         Collection<String> collection = new ArrayList<>();
 
         collection.add("A");
