@@ -3,6 +3,12 @@ package com.myprojetcicaro.poc_streams_collections.linkedhashmap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * - Mantém ordem de inserção
+ * - Pode manter ordem de acesso
+ * - Complexidade O(1) (como HashMap)
+ * - Não é thread-safe
+ */
 public class LinkedHashMapExamples {
 
     public static void run() {
