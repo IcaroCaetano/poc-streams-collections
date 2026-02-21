@@ -3,6 +3,17 @@ package com.myprojetcicaro.poc_streams_collections.linkedlist;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
+/**
+ * - Cada elemento (Node) guarda:
+ * valor
+ * referência para anterior
+ * referência para próximo
+ *
+ * LinkedList é uma implementação de:
+ * List
+ * Deque
+ * Queue
+ */
 public class LinkedListExamples {
 
     public static void run() {
