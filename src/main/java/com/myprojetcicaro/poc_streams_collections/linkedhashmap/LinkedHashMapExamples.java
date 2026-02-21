@@ -39,8 +39,7 @@ public class LinkedHashMapExamples {
 
         System.out.println("Após acessar chave 1:");
 
-        map.forEach((k, v) ->
-                System.out.println(k + " -> " + v));
+        map.forEach((k, v) -> System.out.println(k + " -> " + v));
     }
 
     private static void lruCacheExample() {
@@ -58,8 +57,7 @@ public class LinkedHashMapExamples {
         // Adiciona novo item (remove o menos usado)
         cache.put(4, "D");
 
-        cache.forEach((k, v) ->
-                System.out.println(k + " -> " + v));
+        cache.forEach((k, v) -> System.out.println(k + " -> " + v));
     }
 
     static class LRUCache<K, V> extends LinkedHashMap<K, V> {
