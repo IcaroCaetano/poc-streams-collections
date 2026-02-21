@@ -43,6 +43,7 @@ public class LinkedListExamples {
 
         LinkedList<String> list = new LinkedList<>();
 
+        list.add("meio");
         list.addFirst("Inicio");
         list.addLast("Fim");
 
@@ -71,10 +72,19 @@ public class LinkedListExamples {
 
         LinkedList<Integer> stack = new LinkedList<>();
 
+        /**
+         * Adiciona um elemento à pilha representada por esta lista. Em outras palavras, insere o elemento
+         * no início desta lista.
+         * Este método é equivalente a addFirst.
+         */
         stack.push(10);
         stack.push(20);
         stack.push(30);
 
+        /**
+         * Pops an element from the stack represented by this list. In other words, removes and returns the
+         * first element of this list
+         */
         System.out.println("Pop: " + stack.pop());
         System.out.println("Stack: " + stack);
     }
@@ -85,12 +95,21 @@ public class LinkedListExamples {
 
         LinkedList<String> queue = new LinkedList<>();
 
+        // Adiciona o elemento especificado como o último elemento (cauda) desta lista.
         queue.offer("A");
         queue.offer("B");
         queue.offer("C");
 
+        // Poll -
+        //Retrieves and removes the head (first element) of this list
         System.out.println("Poll: " + queue.poll());
         System.out.println("Queue: " + queue);
+
+        /**
+         * ===  Queue (FIFO) ===
+         * Poll: A
+         * Queue: [B, C]
+         */
     }
 
     //  Iteração com ListIterator

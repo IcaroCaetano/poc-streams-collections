@@ -6,6 +6,7 @@ import com.myprojetcicaro.poc_streams_collections.hashmap.HashMapExamples;
 import com.myprojetcicaro.poc_streams_collections.hashset.HashSetExamples;
 import com.myprojetcicaro.poc_streams_collections.hashtable.HashtableExamples;
 import com.myprojetcicaro.poc_streams_collections.linkedhashmap.LinkedHashMapExamples;
+import com.myprojetcicaro.poc_streams_collections.linkedlist.LinkedListExamples;
 import com.myprojetcicaro.poc_streams_collections.list.ListExamples;
 import com.myprojetcicaro.poc_streams_collections.listiterator.ListIteratorExamples;
 import com.myprojetcicaro.poc_streams_collections.map.MapExamples;
@@ -47,5 +48,8 @@ public class PocStreamsCollectionsApplication {
 
 		System.out.println("******EnumMap******");
 		EnumMapExamples.run();
+
+		System.out.println("******LinkedList******");
+		LinkedListExamples.run();
 	}
 }
