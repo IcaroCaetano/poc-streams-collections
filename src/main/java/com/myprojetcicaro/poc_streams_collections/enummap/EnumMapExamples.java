@@ -64,8 +64,7 @@ public class EnumMapExamples {
         map.put(OrderStatus.NEW, 1);
         map.put(OrderStatus.DELIVERED, 4);
 
-        map.forEach((k, v) ->
-                System.out.println(k + " -> " + v));
+        map.forEach((k, v) -> System.out.println(k + " -> " + v));
     }
 
     private static void realUseCaseExample() {
