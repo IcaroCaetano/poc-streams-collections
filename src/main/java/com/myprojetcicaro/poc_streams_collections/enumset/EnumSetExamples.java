@@ -2,6 +2,13 @@ package com.myprojetcicaro.poc_streams_collections.enumset;
 
 import java.util.EnumSet;
 
+/**
+ * - Extremamente rápido
+ * - Muito eficiente em memória
+ * - Baseado em bit vector (bitmask)
+ * - Só funciona com enum
+ * - Não aceita null
+ */
 public class EnumSetExamples {
 
     public static void run() {
@@ -23,8 +30,7 @@ public class EnumSetExamples {
     private static void basicExample() {
         System.out.println("\n===EnumSet Básico ===");
 
-        EnumSet<Permission> permissions =
-                EnumSet.of(Permission.READ, Permission.WRITE);
+        EnumSet<Permission> permissions = EnumSet.of(Permission.READ, Permission.WRITE);
 
         permissions.forEach(System.out::println);
     }
@@ -32,8 +38,7 @@ public class EnumSetExamples {
     private static void allOfExample() {
         System.out.println("\n=== EnumSet.allOf ===");
 
-        EnumSet<Permission> all =
-                EnumSet.allOf(Permission.class);
+        EnumSet<Permission> all = EnumSet.allOf(Permission.class);
 
         all.forEach(System.out::println);
     }
@@ -50,11 +55,9 @@ public class EnumSetExamples {
     private static void complementExample() {
         System.out.println("\n=== EnumSet.complementOf ===");
 
-        EnumSet<Permission> basic =
-                EnumSet.of(Permission.READ, Permission.WRITE);
+        EnumSet<Permission> basic = EnumSet.of(Permission.READ, Permission.WRITE);
 
-        EnumSet<Permission> complement =
-                EnumSet.complementOf(basic);
+        EnumSet<Permission> complement = EnumSet.complementOf(basic);
 
         complement.forEach(System.out::println);
     }
