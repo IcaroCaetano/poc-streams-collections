@@ -1,5 +1,6 @@
 package com.myprojetcicaro.poc_streams_collections;
 
+import com.myprojetcicaro.poc_streams_collections.enumset.EnumSetExamples;
 import com.myprojetcicaro.poc_streams_collections.hashmap.HashMapExamples;
 import com.myprojetcicaro.poc_streams_collections.hashset.HashSetExamples;
 import com.myprojetcicaro.poc_streams_collections.hashtable.HashtableExamples;
@@ -39,5 +40,8 @@ public class PocStreamsCollectionsApplication {
 
 		System.out.println("******LinkedHashMap******");
 		LinkedHashMapExamples.run();
+
+		System.out.println("******EnumSet******");
+		EnumSetExamples.run();
 	}
 }
