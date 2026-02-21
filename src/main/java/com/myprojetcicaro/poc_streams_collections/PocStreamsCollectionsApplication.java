@@ -11,6 +11,7 @@ import com.myprojetcicaro.poc_streams_collections.list.ListExamples;
 import com.myprojetcicaro.poc_streams_collections.listiterator.ListIteratorExamples;
 import com.myprojetcicaro.poc_streams_collections.map.MapExamples;
 import com.myprojetcicaro.poc_streams_collections.treemap.TreeMapExamples;
+import com.myprojetcicaro.poc_streams_collections.vector.VectorExamples;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -21,7 +22,6 @@ public class PocStreamsCollectionsApplication {
 		System.out.println("******Lists******");
 		ListExamples.run();
 
-		System.out.println();
 		System.out.println("******Maps******");
 		MapExamples.run();
 
@@ -51,5 +51,9 @@ public class PocStreamsCollectionsApplication {
 
 		System.out.println("******LinkedList******");
 		LinkedListExamples.run();
+
+		System.out.println("******Vector******");
+		VectorExamples.run();
+
 	}
 }
