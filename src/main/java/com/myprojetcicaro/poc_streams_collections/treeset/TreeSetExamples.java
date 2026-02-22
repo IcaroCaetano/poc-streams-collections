@@ -59,6 +59,16 @@ public class TreeSetExamples {
         System.out.println("Lower than 30: " + set.lower(30));
         System.out.println("Ceiling 25: " + set.ceiling(25));
         System.out.println("Floor 25: " + set.floor(25));
+
+        /**
+         * == Navigable Methods ===
+         * First: 10
+         * Last: 50
+         * Higher than 30: 40
+         * Lower than 30: 20
+         * Ceiling 25: 30
+         * Floor 25: 20
+         */
     }
 
     // Subsets
@@ -71,5 +81,12 @@ public class TreeSetExamples {
         System.out.println("HeadSet (<30): " + set.headSet(30));
         System.out.println("TailSet (>=30): " + set.tailSet(30));
         System.out.println("SubSet (20 to 40): " + set.subSet(20, 40));
+
+        /**
+         * === Subsets ===
+         * HeadSet (<30): [10, 20]
+         * TailSet (>=30): [30, 40, 50]
+         * SubSet (20 to 40): [20, 30]
+         */
     }
 }
