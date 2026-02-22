@@ -12,6 +12,7 @@ import com.myprojetcicaro.poc_streams_collections.list.ListExamples;
 import com.myprojetcicaro.poc_streams_collections.listiterator.ListIteratorExamples;
 import com.myprojetcicaro.poc_streams_collections.map.MapExamples;
 import com.myprojetcicaro.poc_streams_collections.treemap.TreeMapExamples;
+import com.myprojetcicaro.poc_streams_collections.treeset.TreeSetExamples;
 import com.myprojetcicaro.poc_streams_collections.vector.VectorExamples;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -58,5 +59,8 @@ public class PocStreamsCollectionsApplication {
 
 		System.out.println("******Collection******");
 		CollectionExamples.run();
+
+		System.out.println("******TreeSet******");
+		TreeSetExamples.run();
 	}
 }
