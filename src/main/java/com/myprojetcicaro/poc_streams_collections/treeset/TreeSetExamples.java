@@ -2,6 +2,13 @@ package com.myprojetcicaro.poc_streams_collections.treeset;
 
 import java.util.*;
 
+
+/**
+ * Não permite elementos duplicados
+ * Mantém os elementos ordenados automaticamente
+ * Usa internamente uma Red-Black Tree
+ * Complexidade: O(log n) para add, remove e contains
+ */
 public class TreeSetExamples {
 
     public static void run() {
@@ -20,7 +27,7 @@ public class TreeSetExamples {
         set.add("Banana");
         set.add("Apple");
         set.add("Orange");
-        set.add("Apple"); // duplicado
+        set.add("Apple");
 
         System.out.println("Ordered Set: " + set);
     }
