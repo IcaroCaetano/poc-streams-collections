@@ -56,6 +56,11 @@ public class ConcurrentCollectionsExamples {
         map.compute("A", (k, v) -> v + 10);
 
         System.out.println(map);
+
+        /**
+         * ===ConcurrentHashMap ===
+         * {A=11, B=2}
+         */
     }
 
     // CopyOnWriteArrayList
@@ -84,6 +89,13 @@ public class ConcurrentCollectionsExamples {
         }
 
         System.out.println("Final List: " + list);
+
+        /**
+         * === CopyOnWriteArrayList ===
+         * A
+         * B
+         * Final List: [A, B, NEW, NEW]
+         */
     }
 
     // ConcurrentLinkedQueue
@@ -108,6 +120,12 @@ public class ConcurrentCollectionsExamples {
         while (!queue.isEmpty()) {
             System.out.println("Processing: " + queue.poll());
         }
+
+        /**
+         * === ConcurrentLinkedQueue ===
+         * Processing: Task1
+         * Processing: Task2
+         */
     }
 
     // BlockingQueue
@@ -136,6 +154,11 @@ public class ConcurrentCollectionsExamples {
              * waiting if necessary until an element becomes available.
              */
             System.out.println("Took: " + queue.take());
+
+            /**
+             * === BlockingQueue ===
+             * Took: Job1
+             */
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
@@ -161,5 +184,10 @@ public class ConcurrentCollectionsExamples {
         map.put(2, "B");
 
         System.out.println("Ordered Map: " + map);
+
+        /**
+         * === ConcurrentSkipListMap ===
+         * Ordered Map: {1=A, 2=B, 3=C}
+         */
     }
 }

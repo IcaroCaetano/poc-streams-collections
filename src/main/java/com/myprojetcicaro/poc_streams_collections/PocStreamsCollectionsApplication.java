@@ -1,6 +1,7 @@
 package com.myprojetcicaro.poc_streams_collections;
 
 import com.myprojetcicaro.poc_streams_collections.collection.CollectionExamples;
+import com.myprojetcicaro.poc_streams_collections.concurrencycollection.ConcurrentCollectionsExamples;
 import com.myprojetcicaro.poc_streams_collections.enummap.EnumMapExamples;
 import com.myprojetcicaro.poc_streams_collections.enumset.EnumSetExamples;
 import com.myprojetcicaro.poc_streams_collections.hashmap.HashMapExamples;
@@ -62,5 +63,8 @@ public class PocStreamsCollectionsApplication {
 
 		System.out.println("******TreeSet******");
 		TreeSetExamples.run();
+
+		System.out.println("******ConcurrentCollections******");
+		ConcurrentCollectionsExamples.run();
 	}
 }
