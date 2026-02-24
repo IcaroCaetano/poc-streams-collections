@@ -145,6 +145,15 @@ public class ConcurrentCollectionsExamples {
     private static void skipListExample() {
         System.out.println("\n=== ConcurrentSkipListMap ===");
 
+        /**
+         * Uma implementação escalável e concorrente de ConcurrentNavigableMap.
+         * O mapa é classificado de acordo com a ordem natural de suas chaves ou por
+         * um Comparator fornecido no momento da criação do mapa, dependendo do construtor utilizado.
+         * Esta classe implementa uma variante concorrente de SkipLists, fornecendo um
+         * custo de tempo médio esperado de log(n) para as operações containsKey, get,
+         * put e remove e suas variantes. As operações de inserção, remoção, atualização e
+         * são executadas com segurança de forma concorrente por várias threads.
+         */
         ConcurrentSkipListMap<Integer, String> map = new ConcurrentSkipListMap<>();
 
         map.put(3, "C");
