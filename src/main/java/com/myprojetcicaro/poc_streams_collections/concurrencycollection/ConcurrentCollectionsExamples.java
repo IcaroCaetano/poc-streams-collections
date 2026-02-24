@@ -31,13 +31,24 @@ public class ConcurrentCollectionsExamples {
     private static void copyOnWriteListExample() {
         System.out.println("\n=== CopyOnWriteArrayList ===");
 
+        /**
+         * Normalmente, isso seria muito custoso, mas pode ser mais eficiente do que
+         * alternativas quando as operações de percurso superam em muito as mutações,
+         * e é útil quando você não pode ou não quer sincronizar os percursos, mas precisa
+         * evitar interferências entre threads concorrentes. O método de iterador no estilo
+         * "snapshot" usa uma referência ao estado do array no momento em que o iterador foi
+         * criado. Esse array nunca muda durante a vida útil do iterador, portanto, a
+         * interferência é impossível e o iterador tem a garantia de não lançar uma exceção
+         * `ConcurrentModificationException`. O iterador não refletirá adições, remoções ou
+         * alterações na lista desde a sua criação.
+         */
         CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
 
         list.add("A");
         list.add("B");
 
         for (String s : list) {
-            list.add("NEW"); // não gera ConcurrentModificationException
+            list.add("NEW");
             System.out.println(s);
         }
 
@@ -48,6 +59,16 @@ public class ConcurrentCollectionsExamples {
     private static void concurrentQueueExample() {
         System.out.println("\n=== ConcurrentLinkedQueue ===");
 
+        /**
+         * Uma fila thread-safe ilimitada baseada em nós encadeados. Esta fila ordena os
+         * elementos em ordem FIFO (primeiro a entrar, primeiro a sair). O primeiro elemento
+         * da fila é aquele que está na fila há mais tempo. O último elemento da fila é aquele
+         * que está na fila há menos tempo. Novos elementos são inseridos no último elemento da
+         * fila, e as operações de recuperação da fila obtêm os elementos do primeiro elemento.
+         * Uma `ConcurrentLinkedQueue` é uma escolha apropriada quando muitas threads compartilharão
+         * o acesso a uma coleção comum. Como a maioria das implementações de coleções concorrentes,
+         * esta classe não permite o uso de elementos nulos.
+         */
         ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<>();
 
         queue.add("Task1");
