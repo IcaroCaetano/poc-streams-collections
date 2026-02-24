@@ -17,11 +17,42 @@ public class ConcurrentCollectionsExamples {
     private static void concurrentHashMapExample() {
         System.out.println("\n===ConcurrentHashMap ===");
 
+        /**
+         * Uma tabela hash que suporta concorrência total em consultas e alta
+         * concorrência esperada em atualizações. Esta classe obedece à mesma
+         * especificação funcional que `Hashtable` e inclui versões dos métodos
+         * correspondentes a cada método de `Hashtable`. No entanto, embora todas
+         * as operações sejam thread-safe, as operações de consulta não envolvem
+         * bloqueio e não há suporte para bloquear a tabela inteira de forma a
+         * impedir todo o acesso. Esta classe é totalmente interoperável com `Hashtable`
+         * em programas que dependem de sua segurança de threads, mas não de seus
+         * detalhes de sincronização.
+         */
         ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
 
         map.put("A", 1);
         map.put("B", 2);
 
+        /**
+         * Tenta calcular um mapeamento para a chave especificada e seu valor mapeado atual
+         * (ou nulo se não houver mapeamento atual). Toda a invocação do método é realizada
+         * atomicamente. A função fornecida é invocada exatamente uma vez por invocação deste
+         * método. Algumas tentativas de atualização neste mapa por outras threads podem ser
+         * bloqueadas enquanto o cálculo estiver em andamento, portanto, o cálculo deve ser
+         * curto e simples.
+         * A função de remapeamento não deve modificar este mapa durante o cálculo.
+         *
+         * Substituições:
+         * compute na interface ConcurrentMap
+         * compute na interface Map
+         *
+         * Parâmetros:
+         * chave – chave à qual o valor especificado será associado
+         * funçãoDeRemapeamento – a função para calcular um valor
+         *
+         * Retorno:
+         * o novo valor associado à chave especificada ou nulo se não houver chave.
+         */
         map.compute("A", (k, v) -> v + 10);
 
         System.out.println(map);
