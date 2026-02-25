@@ -54,11 +54,20 @@ public class ImmutableCollectionsExamples {
         List<String> mutable = new ArrayList<>();
         mutable.add("One");
 
+        /**
+         * Retorna uma visão imutável da lista especificada.
+         * As operações de consulta na lista retornada "leem" a lista especificada,
+         * e as tentativas de modificar a lista retornada, seja diretamente ou por
+         * meio de seu iterador, resultam em uma UnsupportedOperationException.
+         * A lista retornada será serializável se a lista especificada for serializável.
+         * Da mesma forma, a lista retornada implementará RandomAccess se a lista especificada o fizer.
+         *
+         */
         List<String> unmodifiable = Collections.unmodifiableList(mutable);
 
         System.out.println(unmodifiable);
 
-        mutable.add("Two"); // ainda altera!
+        mutable.add("Two");
 
         System.out.println("After modifying original: " + unmodifiable);
     }
