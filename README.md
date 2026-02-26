@@ -1,137 +1,317 @@
-# Poc Streams Collections
+# 🚀 Java Collections & Concurrency POC
 
-## 📌 1️⃣ What is Queue<String>?
+This project is a comprehensive Proof of Concept (POC) covering:
 
-Queue is an interface from the package:
+- Java Collections Framework
+- Generics & Wildcards
+- Data Structures (List, Set, Map, Queue)
+- Ordered Structures
+- Concurrent Collections
+- Immutability
+- Thread-Safety Concepts
+- Internal Behaviors & Performance Characteristics
 
-````
-java.util.Queue
-````
+The goal is to deeply understand how Java collections work internally and how to use them properly in real-world applications.
 
-It defines the behavior of a queue (FIFO — First In, First Out).
+---
 
-When you write:
-````
-Queue<String>
-````
+# 🧠 1️⃣ Collections Framework Overview
 
-You are saying:
+Hierarchy simplified:
 
-I want to work with the contract of a queue that stores Strings.
+Iterable  
+└── Collection  
+  ├── List  
+  ├── Set  
+  └── Queue
 
-You are programming against the interface, not against the implementation.
+Map is NOT part of Collection hierarchy.
 
-This is good design practice.
+Core interfaces explored:
 
-
-## 📌 2️⃣ What is new LinkedList<>()?
-
-LinkedList is a concrete class that:
-
-- Implements List
-
-- Implements Deque
-
-- Implements Queue
-
-In other words, it can function as:
-
+- Collection
 - List
-
+- Set
 - Queue
+- Map
+- SortedSet
+- NavigableSet
 
-- Stack
+---
 
-Here you are using it as a Queue.
+# 📦 2️⃣ List Implementations
 
-## 📌 3️⃣ What does this line do in practice?
+## ArrayList
 
-It creates:
+- Dynamic array
+- Fast random access O(1)
+- Slower insert/remove in middle O(n)
 
-- A FIFO queue based on a doubly linked list.
+## LinkedList
 
-Internally:
+- Doubly linked list
+- Fast insertion/removal at edges O(1)
+- Access by index O(n)
+- Implements List, Queue, Deque
 
-- Each element points to the next.
+Modern recommendation:
+Prefer ArrayDeque instead of LinkedList for Queue usage.
 
-- Insertion at the end is fast.
+---
 
-- Removal at the beginning is fast.
+# 🔁 3️⃣ Queue & Deque
 
-## 📌 4️⃣ Why use it this way?
+FIFO behavior (First In, First Out).
 
-Because it follows the principle:
+Main methods:
 
-- Program to the interface, not to the implementation.
+- offer()
+- poll()
+- peek()
 
-If tomorrow you want to change it:
+Implementations covered:
 
-````
-Queue<String> queue = new ArrayDeque<>();
-````
+- LinkedList
+- ArrayDeque
+- PriorityQueue
 
-Nothing else changes in the code.
+PriorityQueue:
+- Orders elements by natural order or Comparator
+- Not FIFO
 
-## 📌 5️⃣ FIFO Behavior
+---
 
-Example:
+# 🧩 4️⃣ Set Implementations
 
-````
-queue.offer("A");
+## HashSet
 
-queue.offer("B");
+- No duplicates
+- No order guarantee
+- Backed by HashMap
+- O(1) average performance
 
-queue.offer("C");
+## LinkedHashSet
 
-System.out.println(queue.poll());
-````
+- Maintains insertion order
+- Slightly more memory
 
-Output:
-A
+## TreeSet
 
-Because queues work like this:
+- Sorted automatically
+- Backed by Red-Black Tree
+- O(log n)
+- Does NOT allow null
+- Implements NavigableSet
 
-Input → [A, B, C] → Output
-First in → First out.
+Special methods:
+- first()
+- last()
+- higher()
+- lower()
+- ceiling()
+- floor()
+- subSet()
+- headSet()
+- tailSet()
 
-## 📌 6️⃣ Internally (structural view) LinkedList uses:
+---
 
-````
-Node {
-element
-next
-previous
-}
-````
+# 🗺 5️⃣ Map Implementations
 
-Then:
+## HashMap
 
-- Insertion O(1)
+- Key-value structure
+- Allows one null key
+- O(1) average
 
-- Removal O(1) at the beginning
+## LinkedHashMap
 
-- Access by index is O(n)
+- Maintains insertion order
+- Can be configured for access-order (LRU behavior)
 
-## 7️⃣ Important Comparison
-Today, in modern practice, it is more recommended to use:
+## TreeMap
 
-`Queue<String> queue = new ArrayDeque<>();`
+- Sorted by key
+- Backed by Red-Black Tree
+- O(log n)
 
-Because:
+## Hashtable
 
-- Better performance
+- Thread-safe (legacy)
+- No null allowed
+- Slower due to full synchronization
 
-- Lower memory overhead
+Comparison:
 
-- Not synchronized
+HashMap → modern default  
+Hashtable → legacy  
+ConcurrentHashMap → modern concurrent alternative
 
-- More efficient than LinkedList in most cases
+---
 
+# 🔄 6️⃣ Iteration & ListIterator
 
-## 🧠 Final Summary
+Covered:
 
-`Queue<String> queue = new LinkedList<>();`
+- for-each loop
+- Iterator
+- ListIterator
 
-This means:
+ListIterator allows:
+- Forward iteration
+- Backward iteration
+- Element replacement
+- Safe modification
 
-I am creating a FIFO queue of Strings using a linked list as the implementation.
+---
+
+# 🧬 7️⃣ Generics & Wildcards
+
+Important concept:
+
+Collection<?> is read-only (cannot add elements except null).
+
+PECS Rule:
+
+Producer Extends  
+Consumer Super
+
+Examples:
+
+- ? extends T → read
+- ? super T → write
+
+Understanding type safety and capture of ? was demonstrated.
+
+---
+
+# ⚡ 8️⃣ Concurrent Collections (java.util.concurrent)
+
+Why they exist:
+
+- Better scalability
+- Fine-grained locking
+- Lock-free algorithms
+- CAS (Compare-And-Swap)
+
+Covered:
+
+## ConcurrentHashMap
+- Lock striping
+- High performance
+- Thread-safe without global locking
+
+## CopyOnWriteArrayList
+- Safe iteration during modification
+- Good for many reads, few writes
+
+## ConcurrentLinkedQueue
+- Lock-free
+- Non-blocking queue
+
+## BlockingQueue
+- put() blocks if full
+- take() blocks if empty
+- Used in Producer-Consumer patterns
+
+## ConcurrentSkipListMap / Set
+- Ordered concurrent structures
+- Alternative to TreeMap/TreeSet in concurrent systems
+
+---
+
+# 🔐 9️⃣ Immutability
+
+Key concept for thread safety and clean design.
+
+## Factory Methods (Java 9+)
+
+- List.of()
+- Set.of()
+- Map.of()
+
+Characteristics:
+- Truly immutable
+- No null allowed
+- Structural modification throws UnsupportedOperationException
+
+## Unmodifiable Wrappers
+
+Collections.unmodifiableList()
+
+Important:
+Wrapper is not deeply immutable.
+If original changes, wrapper reflects changes.
+
+## Defensive Copy
+
+List.copyOf(original)
+
+Creates independent immutable copy.
+
+## Immutable Class Rules
+
+- Class must be final
+- Fields must be final
+- No setters
+- State defined in constructor
+
+## Records (Java 16+)
+
+Records are immutable by default.
+
+---
+
+# 🏎 1️⃣0️⃣ Performance Characteristics
+
+| Structure | Order | Avg Complexity | Null |
+|------------|--------|---------------|------|
+| ArrayList | Insertion | O(1) access | Yes |
+| LinkedList | Insertion | O(n) access | Yes |
+| HashSet | No | O(1) | 1 |
+| LinkedHashSet | Insertion | O(1) | 1 |
+| TreeSet | Sorted | O(log n) | No |
+| HashMap | No | O(1) | 1 key |
+| TreeMap | Sorted | O(log n) | No |
+| ConcurrentHashMap | No | O(1) | No null |
+| CopyOnWriteArrayList | Insertion | O(n) write | Yes |
+
+---
+
+# 🧠 1️⃣1️⃣ Architectural Principles Applied
+
+- Program to interfaces
+- Prefer immutability
+- Avoid legacy synchronized collections
+- Choose structure based on use case
+- Understand complexity before choosing
+
+---
+
+# 🏁 Final Conclusion
+
+This POC covered:
+
+✔ Core Collections  
+✔ Ordered Structures  
+✔ Generics  
+✔ Iteration Models  
+✔ Concurrent Collections  
+✔ Blocking Structures  
+✔ Immutability  
+✔ Thread-Safety  
+✔ Performance Characteristics  
+✔ Internal Behaviors
+
+This represents a strong foundation in Java Collections and Concurrency at a senior engineering level.
+
+---
+
+# 🎯 Next Evolution (Optional)
+
+- Stream API deep dive
+- ForkJoinPool
+- Parallel Streams
+- Custom Collectors
+- Memory analysis
+- JVM internals
